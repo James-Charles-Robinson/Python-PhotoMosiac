@@ -1,23 +1,26 @@
 from PIL import Image
-import random
 import glob
+import random
 import shutil, os
-import time
 
 '''
 This program takes source images (the cropped down and shrunk images)
 and creates an image of the inputed image using them.
 '''
 
-global source_size
-global max_crop_size
-global min_crop_size
-global input_resize_factor
+global source_size #recommened 25
+global max_crop_size #recommened 300
+global min_crop_size #recommened 4000+
+global input_resize_factor #recommened 6
 
-input_resize_factor = 12 #factor of which input image is shrunk
-min_crop_size = 300 #minimium source dimention
-max_crop_size = 4000 #maximum source dimention
-source_size = 60 #rescaled source size
+input_resize_factor = int(intput("Input Resize Factor: ")) 
+#factor of which input image is shrunk
+min_crop_size = int(intput("Min Source Size: ")) 
+#minimium source dimention
+max_crop_size = int(intput("Max Source Size: ")) 
+#maximum source dimention
+source_size = int(intput("Resized Source Image Size: ")) 
+#rescaled source size
 #these factors change quality and size of outputed image
 
 def InputArray(filename): #inputs image and processes it and stores rgb in array
